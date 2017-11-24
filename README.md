@@ -7,7 +7,7 @@ If we need to explain the project , these project is based on Spring Security LD
 
 Firstly,Spring provide us an embedded LDAP server then we use that for our authentication.
 
-See for the LDAP Server config : [LdapSecurityConfiguration](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/blob/master/backend/src/main/java/com/ldapauth/config/LdapSecurityConfiguration.java).
+See for the LDAP Server config : [LdapSecurityConfiguration.java](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/blob/master/backend/src/main/java/com/ldapauth/config/LdapSecurityConfiguration.java)
 ### Prerequisites
 
 

@@ -30,8 +30,14 @@ Explain how to run the automated tests for this system
 
 ## Deployment
 
-After everythings done you should open : http://localhost:8080 and the page is redirect /login endpoint.
+After everythings done you should open : http://localhost:8080 and the page is automatically redirect /login endpoint.
 
+Login Credentials is providing by [test-server.ldif](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/blob/master/backend/src/main/resources/test-server.ldif)
+
+You can login with : 
+Username : ben
+Password : benspassword
+ 
 ## Built With
 
 * [Angular2](https://angular.io/) - The web framework used

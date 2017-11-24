@@ -37,6 +37,18 @@ Login Credentials is providing by [test-server.ldif](https://github.com/develope
 You can login with : 
 Username : ben
 Password : benspassword
+
+If you want to use other credentials you should make the password sha decoded.
+
+Follow this link :: http://aspirine.org/htpasswd_en.html
+
+For example you want to decode bob's password : 
+
+Write the text 1. Users and passwords part inside this link : bob bobspassword -- {uid} {userPassword}
+Then Click the Generate htpasswd content button and copy the {SHA}xxxxxxxxxxxx part and paste it to the test-server.ldif file's userPassword part.
+
+uid: bob
+userPassword: {SHA}s6ShDHKfjIjUNfTaWwLopI2QG74=
  
 ## Built With
 

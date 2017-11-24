@@ -47,7 +47,7 @@ For example you want to decode bob's password :
 Write the text 1. Users and passwords part inside this link : bob bobspassword -- {uid} {userPassword}
 Then Click the Generate htpasswd content button and copy the {SHA}xxxxxxxxxxxx part and paste it to the test-server.ldif file's userPassword part.
 
-uid: bob
+uid: bob  <br/>
 userPassword: {SHA}s6ShDHKfjIjUNfTaWwLopI2QG74=
  
 ## Built With
@@ -76,5 +76,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone who's code was used
-* Inspiration
+* Inspiration <br/>
+http://javausecase.com/2017/02/19/example-spring-boot-security-integrating-with-ldap-sha-password/ <br/>
+https://memorynotfound.com/spring-security-spring-ldap-authentication-example/ <br/>
+https://spring.io/guides/gs/authenticating-ldap/
+ 

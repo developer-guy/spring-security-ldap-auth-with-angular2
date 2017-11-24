@@ -5,16 +5,18 @@
 
 If we need to explain the project , these project is based on Spring Security LDAP Authentication and the frontend-side Angular2.
 
-Firstly,Spring provide us an embedded LDAP server then we use that for our authentication.
+Firstly,Spring provide us an embedded LDAP server then we use that for our authentication.So create login form using 
+Angular2 to handle authentication by sending post request to /login endpoint which is provided by Spring Security.
 
 See for the LDAP Server config : [LdapSecurityConfiguration.java](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/blob/master/backend/src/main/java/com/ldapauth/config/LdapSecurityConfiguration.java)
+
 ### Prerequisites
 
-
+You should be sure npm installed on the system.
 
 ### Installing
 
-
+Firstly you should run mvn clean install commond on frontend project because the backend project serves the frontend project by this way.
 
 ## Running the tests
 
@@ -28,6 +30,7 @@ Explain how to run the automated tests for this system
 
 ## Deployment
 
+After everythings done you should open : http://localhost:8080 and the page is redirect /login endpoint.
 
 ## Built With
 

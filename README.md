@@ -44,7 +44,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 * **Batuhan Apaydın** - *Initial work* - [SAHABT](http://www.sahabt.com/)
 
-See also the list of [contributors](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/graphs/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/developer-guy/spring-security-ldap-auth-with-angular2/contributors) who participated in this project.
 
 ## License
 

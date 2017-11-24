@@ -1,0 +1,17 @@
+<div class="container">
+
+  <form class="form-signin">
+    <div class="alert alert-danger" *ngIf="message.length">
+      <strong>{{message}}</strong>
+    </div>
+    <label for="username" class="sr-only">User name</label>
+    <input type="text" id="username" [(ngModel)]="loginCredential.username" class="form-control" name="username"
+           placeholder="Username"
+           required autofocus/>
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" id="password" [(ngModel)]="loginCredential.password" class="form-control"
+           placeholder="Password" name="password" required/>
+    <button class="btn btn-lg btn-success btn-block" type="submit" (click)="login()">Sign in</button>
+  </form>
+
+</div>

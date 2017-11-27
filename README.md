@@ -22,7 +22,7 @@ Soyad	               sn	                 Kullanıcı soyadı	                Kul
 Kullanıcı ID	        uid	                Sistem giriş kimlik adı 	        İTÜ Kullanıcı Adı
 Aşağıdaki şekilde ise bir ağaç örneği görülmektedir.
 
-![alt text](https://raw.githubusercontent.com/developer-guy/spring-security-ldap-auth-with-angular2/master/ldap_data_interchange_format.jpg)
+![alt text](https://raw.githubusercontent.com/developer-guy/spring-security-ldap-auth-with-angular2/master/ldap_data_interchange_format.png)
 
 LDIF (LDAP Data Interchange Format – LDAP Veri Değişim Biçimi) ise LDAP hizmeti veren sunuculara istemcilerin bağlanabilmesini ve nesnelere ait bilgileri görüntüleyebilmesini sağlayan veri değişim formatını tanımlamaktadır. Bir internet standardı olan LDIF ile dizinde tutulan nesneler üzerinde toplu olarak işlemler yapılabilmekte, bu nesnelere ait özellikler değiştirilebilmekte ve nesne özellikleri görüntülenebilmektedir.  Farklı programlama dilleri ile dizinlere erişim sağlanabilmektedir ancak bu programlama dillerinin hepsi temelde LDIF formatını kullanmaktadır
 

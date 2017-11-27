@@ -1,7 +1,7 @@
 # Spring Security Ldap Authentication and Angular2 
 ## Ldap Nedir ? 
 LDAP (Lightweight Directory Access Protocol - Hafifletilmiş Dizin Erişim Protokolü)
-Eyl 06, 2013
+
 Dizin; elektronik ortamda belirli türden nesneleri içerisinde bulunduran ve bu nesneler arasında arama yapma imkanı veren yapıdır. Dizinlere örnek olarak; tutulan kişi listeleri, telefon rehberi, bir ağa dahil olan bilgisayarların listeleri ve bir şirkette çalışan personele dair tutulan kayıtlar verilebilir. Dizinlerin genel özellikleri incelendiğinde ise, yapısal depolama yaptıkları, bu depolamanın genellikle dağınık olduğu, içerdiği nesnelerin genellikle birbirlerinden bağımsız oldukları ve hiyerarşik bir düzende sıralandıkları görülecektir. 
 
 Dizin standartları 1988 yılında ISO-ITU tarafından X.500 standardı ile belirlenmiştir. X.500 standardı dizinlerin kullanımı ve erişimi ile ilgili dört farklı protokolü içerisinde barındırmaktadır. Bunlar; DAP (Directory Access Protocol - Dizin Erişim Protokolü), DSP (Directory System Protocol - Dizin Sistemi Protokolü), DISP (Dİrectory Information Shadowing Protocol - Dizin Bilgileri Gölgeleme Protocolü) ve DOP (Directory Operational Bindings Management Protocol - Dizin İşlemsel Bağlantı Yönetim Protokolü) ‘dür.   
@@ -44,16 +44,6 @@ You should be sure npm installed on the system.
 ### Installing
 
 Firstly you should run mvn clean install commond on frontend project because the backend project serves the frontend project by this way.
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-
-### And coding style tests
-
 
 ## Deployment
 
@@ -108,4 +98,28 @@ http://javausecase.com/2017/02/19/example-spring-boot-security-integrating-with-
 https://memorynotfound.com/spring-security-spring-ldap-authentication-example/ <br/>
 https://spring.io/guides/gs/authenticating-ldap/ <br/>
 https://bidb.itu.edu.tr/seyirdefteri/blog/2013/09/06/ldap-(lightweight-directory-access-protocol---hafifletilmi%C5%9F-dizin-eri%C5%9Fim-protokol%C3%BC)
+
+##  🐳 Dockerizing LDAP Server
+
+This project also using an ldap server which is running on docker and entegrated with local machine.
+
+I'am using an https://github.com/nickstenning/docker-slapd to create a LDAP Server on docker . 
+
+Follow these instructions : 
+
+First run a container with port forwarding . And you should be in the directory which is contain test-server.ldif file.
+```sh
+$  docker run -p 389:389 -v /tmp/ldap:/var/lib/ldap \
+           -e LDAP_DOMAIN=springframework.org \
+           -e LDAP_ORGANISATION="My Spring LDAP Corporation" \
+           -e LDAP_ROOTPASS=s3cr3tpassw0rd \
+           -d nickstenning/slapd
+$ ldapadd -h localhost -p 389  -c -x -D cn=admin,dc=springframework,dc=org -W -f test-server.ldif
+```
+This command will ask you a password.Enter the password you given above.
+
+   
+
+
+
  

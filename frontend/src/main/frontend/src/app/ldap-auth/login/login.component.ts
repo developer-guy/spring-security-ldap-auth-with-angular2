@@ -13,13 +13,13 @@ import {HttpErrorResponse} from "@angular/common/http";
 export class LoginComponent implements OnInit {
 
   loginCredential: LoginCredential;
-  message: string;
+  message: string = "";
 
   constructor(private loginService: LoginService, private router: Router, private localStorageService: LocalStorageService) {
-    this.loginCredential = new LoginCredential();
   }
 
   ngOnInit() {
+    this.loginCredential = new LoginCredential();
   }
 
   login() {

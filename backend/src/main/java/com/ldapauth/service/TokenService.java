@@ -8,14 +8,13 @@ import com.unboundid.util.Base64;
 import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.ldap.userdetails.LdapUserDetailsImpl;
+import org.springframework.security.core.userdetails.User;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectInputStream;
-import java.time.LocalDate;
 import java.util.Objects;
 
 
@@ -26,7 +25,7 @@ public final class TokenService {
     }
 
     public static void createToken(HttpServletResponse response, Authentication authentication) {
-        LdapUserDetailsImpl ldapUserDetails = (LdapUserDetailsImpl) authentication.getPrincipal();
+        User ldapUserDetails = (User) authentication.getPrincipal();
         AccountCredentials accountCredentials = convertToAccountCredentials(ldapUserDetails);
         byte[] tokenBytes = ObjectUtil.deepCopy(accountCredentials);
         if (Objects.nonNull(tokenBytes)) {
@@ -44,16 +43,12 @@ public final class TokenService {
         }
     }
 
-    private static AccountCredentials convertToAccountCredentials(LdapUserDetailsImpl ldapUserDetails) {
+    private static AccountCredentials convertToAccountCredentials(User ldapUserDetails) {
         AccountCredentials accountCredentials = new AccountCredentials();
-        accountCredentials.setDn(ldapUserDetails.getDn());
         accountCredentials.setAccountNonExpired(ldapUserDetails.isAccountNonExpired());
         accountCredentials.setAccountNonLocked(ldapUserDetails.isAccountNonLocked());
         accountCredentials.setAuthorities(ldapUserDetails.getAuthorities());
         accountCredentials.setUsername(ldapUserDetails.getUsername());
-        accountCredentials.setTimeBeforeExpiration(ldapUserDetails.getTimeBeforeExpiration());
-        accountCredentials.setGpraceLoginsRemaining(ldapUserDetails.getGraceLoginsRemaining());
-        accountCredentials.setLoginDate(LocalDate.now());
         return accountCredentials;
     }
 
